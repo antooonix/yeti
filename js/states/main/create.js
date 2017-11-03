@@ -10,8 +10,9 @@ mainState.create = function () {
     scoreText = game.add.text(10, game.height * 0.1, 'Score: 0', { fontSize: '20px', fill: '#fff' });
         
     // Turn the background sky blue.
-    game.stage.backgroundColor = "#bde5dd";
-
+    game.stage.backgroundColor = "#fff";
+    game.add.image(0 , game.height - 100, 'background').anchor.set(0.5);
+   // debugger;
     // Add the ground.
     this.ground = game.add.sprite(0, game.height * .9, "ground");
 

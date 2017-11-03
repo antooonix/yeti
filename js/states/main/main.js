@@ -5,8 +5,9 @@ let path = "images/";
 
 mainState.preload = function () {
     game.load.image("ground", path + "/ground.png");
-    game.load.image("block", path + "/block.png");
+    game.load.image("block_1", path + "/block.png");
     game.load.image("clouds", path + "/clouds.png");
+    game.load.image("background", path + "background.png");
     game.load.atlasJSONHash('hero', path + "/explorer.png", path + "/explorer.json");
 };
 
