@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.game {
+    width: 100%;
+    position: relative;
+}
+
+.sky {
+    background-color: #41aeb5;
+    height: 280px;
+}
+
+.ground {
+    height: 200px;
+}
+
+canvas {
+    position: absolute;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}
