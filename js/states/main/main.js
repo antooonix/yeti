@@ -1,11 +1,13 @@
 let mainState = {}
 mainState.makeBlocks = makeBlocks;
 
+let path = "images/";
+
 mainState.preload = function () {
-    game.load.image("ground", "images/ground.png");
-    game.load.image("block", "images/block.png");
-    game.load.image("clouds", "images/clouds.png");
-    game.load.atlasJSONHash('hero', 'images/explorer.png', 'images/explorer.json');
+    game.load.image("ground", path + "/ground.png");
+    game.load.image("block", path + "/block.png");
+    game.load.image("clouds", path + "/clouds.png");
+    game.load.atlasJSONHash('hero', path + "/explorer.png", path + "/explorer.json");
 };
 
 mainState.doJump = function () {
