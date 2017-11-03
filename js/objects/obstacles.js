@@ -1,27 +1,23 @@
-function makeBlocks () {
+function makeBlocks() {
     this.blocks.removeAll();
     
-    let wallHeight = game.rnd.integerInRange(1, 1);
-    
-    for (let i = 0; i < wallHeight; i++) {
-        let block = game.add.sprite(0, -i * 50, "block");
-        this.blocks.add(block);
-    }
+
+    let block = game.add.sprite(0, 0, "block");
+    block.width = 50;
+    block.height = 50;
+    this.blocks.add(block);
+
+    game.world.bringToTop(mainState.hero);
+
     this.blocks.x = game.width - this.blocks.width
-    this.blocks.y = this.ground.y - 50;
+    this.blocks.y = this.ground.y - 0.5;
 
-    // Loop through each block and apply physics.
     this.blocks.forEach(function (block) {
-
-        // Enable physics.
         game.physics.enable(block, Phaser.Physics.ARCADE);
+
         block.body.velocity.x = -250;
-
-        // Apply some gravity to the block.
-        // Not too much or the blocks will bounce against each other.
-        // block.body.gravity.y = 4;
-
-        // Set the bounce so the blocks will react to the runner.
-        // block.body.bounce.set(1, 1);
+        block.body.checkCollision.left = false;
+        block.body.checkCollision.up = false;
+        block.body.collideWorldBounds.y = true;
     });
 };

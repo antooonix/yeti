@@ -30,6 +30,9 @@ mainState.delayOver = function () {
     if (this.hero) {
         this.hero.animations.play("die");
         this.hero.body.velocity.y = 100;
+        // fall down when dead
+        this.hero.body.collideWorldBounds = false;
+        this.blocks.children[0].body.velocity.x = -100;
     }
     game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
 };
