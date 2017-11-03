@@ -1,11 +1,11 @@
-let BLOCKS = ["block_1"];
+let BLOCKS = ["block_1", "block_2", "block_3"];
 
 function makeBlocks() {
     this.blocks.removeAll();
 
     let block = randomBlock();
-    block.width = 80;
-    block.height = 80;
+    block.width = 100;
+    block.height = 100;
     this.blocks.add(block);
 
     game.world.bringToTop(mainState.hero);
@@ -23,7 +23,7 @@ function makeBlocks() {
     });
 
     function randomBlock() {
-        let rndBlock = game.rnd.integerInRange(0, 0);
+        let rndBlock = game.rnd.integerInRange(0, BLOCKS.length - 1);
         return game.add.sprite(0, 0, BLOCKS[rndBlock])
     }
 };
