@@ -4,14 +4,16 @@ function makeBlocks() {
     this.blocks.removeAll();
 
     let block = randomBlock();
-    block.width = 100;
-    block.height = 100;
+    block.width = 150;
+    block.height = 200;
+    let scaleRatioX = 428 / block.width;
+    let scaleRatioY = 428 / block.height;
     this.blocks.add(block);
 
     game.world.bringToTop(mainState.hero);
 
     this.blocks.x = game.width - this.blocks.width
-    this.blocks.y = this.ground.y - 30;
+    this.blocks.y = game.height - 150;
 
     this.blocks.forEach(function (block) {
         game.physics.enable(block, Phaser.Physics.ARCADE);
@@ -20,6 +22,9 @@ function makeBlocks() {
         block.body.checkCollision.left = false;
         block.body.checkCollision.up = false;
         block.body.collideWorldBounds.y = true;
+        block.body.setSize(95 * scaleRatioX, 1 * scaleRatioY, 25 * scaleRatioX, 79 * scaleRatioY);
+        block.body.immovable = true;
+
     });
 
     function randomBlock() {

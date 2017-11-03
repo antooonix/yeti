@@ -44,8 +44,8 @@ mainState.create = function () {
     this.hero.anchor.set(0.5, 1);
 
     // Add the clouds.
-    this.clouds = game.add.sprite(0, 0, "clouds");
-    this.clouds.width = game.width;
+    // this.clouds = game.add.sprite(0, 0, "clouds");
+   // this.clouds.width = game.width;
 
     // Start the physics engine.
     game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -69,4 +69,6 @@ mainState.create = function () {
         .onDown.add(this.doJump, this);
     this.blocks = game.add.group();
     this.makeBlocks();
+
+    game.debug.reset();
   };

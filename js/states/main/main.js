@@ -45,3 +45,10 @@ mainState.delayOver = function () {
 mainState.gameOver = function () {
     game.state.start("EndState");
 }
+
+mainState.render = function () {
+    game.debug.bodyInfo(this.hero, 32, 32);
+    game.debug.body(this.hero);
+    if (this.blocks.children.length > 0)
+        game.debug.body(this.blocks.children[0]);
+}
