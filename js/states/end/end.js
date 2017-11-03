@@ -1,7 +1,7 @@
 let endState = {}
 
 endState.preload = function () {
-    game.load.image("playAgain", "images/playAgain.png");
+    game.load.image("playAgain", path + "images/playAgain.png");
 };
 
 endState.restartGame = function () {
