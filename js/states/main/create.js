@@ -1,4 +1,11 @@
 mainState.create = function () {
+
+    mainState.onGround = function () {
+        if (this.hero) {
+            this.hero.animations.play("run");
+        }
+    }
+
     //Enable Arcade Physics
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
