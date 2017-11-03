@@ -49,9 +49,9 @@ mainState.create = function () {
 
     // Make animations.
     animations.hero = {};    
-    animations.hero.dieAnimation = this.hero.animations.add("die", makeArray(0, 1), 12, false);
-    animations.hero.jumpAnimation = this.hero.animations.add("jump", makeArray(0,1),  8, false);
-    animations.hero.runAnimation = this.hero.animations.add("run", makeArray(0, 29), 40, true).play();
+    animations.hero.dieAnimation = this.hero.animations.add("die", makeArray(0, 9), 150, false);
+    animations.hero.jumpAnimation = this.hero.animations.add("jump", makeArray(10, 18),  40, false);
+    animations.hero.runAnimation = this.hero.animations.add("run", makeArray(26, 49), 30, true).play();
     
     // Hero characteristics
     this.hero.width = game.width / 12;

@@ -11,7 +11,7 @@ mainState.preload = function () {
     game.load.image("block_3", path + "cracks/Crack3.png");
     game.load.image("back_mountains", path + "mountains/mountain_back_small.svg");
     game.load.image("front_mountains", path + "mountains/mountain_front_small.svg");
-    game.load.atlasJSONHash('hero', path + "hero/yeti_hero.png", path + "hero/yeti_hero.json");
+    game.load.atlasJSONHash('hero', path + "hero/yeti.png", path + "hero/yeti.json");
 };
 
 mainState.doJump = function () {
@@ -32,11 +32,13 @@ mainState.onGround = function () {
 mainState.delayOver = function () {
     this.clickLock = true;
     if (this.hero) {
-        this.hero.animations.play("die");
+        // this.hero.animations.play("die");
         this.blocks.getChildAt(0).body.velocity.x = -100;
         this.blocks.getChildAt(0).body.checkCollision.up = false;
         this.ground.body.checkCollision.up = false;
         this.hero.body.velocity.y = 100;
+        mainState.onGround = function() {};
+        this.hero.animations.play("die");
         // fall down when dead
         this.hero.body.collideWorldBounds = false;
     }
