@@ -1,5 +1,6 @@
 function makeBlocks () {
     this.blocks.removeAll();
+    
     let wallHeight = game.rnd.integerInRange(1, 1);
     
     for (let i = 0; i < wallHeight; i++) {
