@@ -19,7 +19,15 @@ mainState.create = function () {
     graphics.lineStyle(1, 0xFFFFFF, 1);
     graphics.drawRect(0, 280, game.width, 200);
     graphics.endFill();
-    // this.ground = new Phaser.Line(0, 280, 800, 200);
+
+    // Add mountains
+    this.back_mountains = game.add.sprite(0, 142, "back_mountains");
+    this.back_mountains.width = game.width;
+    this.back_mountains.scale.y = this.back_mountains.scale.x* 1.5;
+
+    this.front_mountains = game.add.sprite(110, 210, "front_mountains");
+    this.front_mountains.width = game.width;
+    this.front_mountains.scale.y = this.front_mountains.scale.x;
 
     // Add the hero in.
     this.hero = game.add.sprite(game.width * .2, this.ground.y, "hero");
