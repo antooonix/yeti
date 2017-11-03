@@ -10,11 +10,17 @@ mainState.create = function () {
     scoreText = game.add.text(10, game.height * 0.1, 'Score: 0', { fontSize: '20px', fill: '#fff' });
         
     // Turn the background sky blue.
-    game.stage.backgroundColor = "#fff";
+    game.stage.backgroundColor = "#bde5dd";
     game.add.image(0 , game.height - 100, 'background').anchor.set(0.5);
    // debugger;
     // Add the ground.
     this.ground = game.add.sprite(0, game.height * .9, "ground");
+    var graphics = game.add.graphics();
+    graphics.beginFill(0xFFFFFF);
+    graphics.lineStyle(1, 0xFFFFFF, 1);
+    graphics.drawRect(0, 280, game.width, 200);
+    graphics.endFill();
+    // this.ground = new Phaser.Line(0, 280, 800, 200);
 
     // Add the hero in.
     this.hero = game.add.sprite(game.width * .2, this.ground.y, "hero");
