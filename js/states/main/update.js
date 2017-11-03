@@ -16,7 +16,7 @@ mainState.update = function () {
 
     // Get the first child.
     let fchild = this.blocks.getChildAt(0);
-    
+     
     // If off the screen reset the blocks.
     if (fchild.x < -game.width) {
         this.makeBlocks();

@@ -5,12 +5,16 @@ mainState.create = function () {
     this.clickLock = false;
     this.power = 40;
     this.timer = game.time.create(false);
+
+    // FPS defaults
+    game.time.desiredFps = 60;
+    game.time.slowMotion = 1;
+
+    // Scoring defaults
     resetScore();
     this.timer.loop(20, updateScore, this);
     this.timer.start();
-
-    // Show scores.
-    scoreText = game.add.text(10, game.height * 0.1, 'Score: 0', { fontSize: '20px', fill: '#fff' });
+    scoreText = game.add.text(10, 10, 'Score: 0', { fontSize: '20px', fill: '#fff' });
         
     // Turn the background sky blue.
     game.stage.backgroundColor = "#41aeb5";
@@ -44,11 +48,13 @@ mainState.create = function () {
     this.hero = game.add.sprite(game.width * .2, this.ground.y, "hero");
 
     // Make animations.
-    this.hero.animations.add("die", makeArray(0, 10), 12, false);
-    this.hero.animations.add("jump", makeArray(20, 30),  8, false);
-    this.hero.animations.add("run", makeArray(30, 40), 20, true);
-    this.hero.animations.play("run");
-    this.hero.width = game.width / 14;
+    animations.hero = {};    
+    animations.hero.dieAnimation = this.hero.animations.add("die", makeArray(0, 1), 12, false);
+    animations.hero.jumpAnimation = this.hero.animations.add("jump", makeArray(0,1),  8, false);
+    animations.hero.runAnimation = this.hero.animations.add("run", makeArray(0, 29), 40, true).play();
+    
+    // Hero characteristics
+    this.hero.width = game.width / 16;
     this.hero.scale.y = this.hero.scale.x;
     this.hero.anchor.set(0.5, 1);
 
