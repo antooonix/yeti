@@ -1,4 +1,6 @@
 mainState.update = function () {
+    //console.log(game.time.totalElapsedSeconds();
+
     // Collide the hero with the ground.
     game.physics.arcade.collide(this.hero, this.ground, this.onGround, null, this);
 
@@ -14,7 +16,7 @@ mainState.update = function () {
 
     // Get the first child.
     let fchild = this.blocks.getChildAt(0);
-
+    
     // If off the screen reset the blocks.
     if (fchild.x < -game.width) {
         this.makeBlocks();

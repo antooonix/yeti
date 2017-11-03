@@ -1,11 +1,13 @@
 let mainState = {}
 mainState.makeBlocks = makeBlocks;
 
+let path = "images/";
+
 mainState.preload = function () {
-    game.load.image("ground", "images/ground.png");
-    game.load.image("block", "images/block.png");
-    game.load.image("clouds", "images/clouds.png");
-    game.load.atlasJSONHash('hero', 'images/explorer.png', 'images/explorer.json');
+    game.load.image("ground", path + "/ground.png");
+    game.load.image("block", path + "/block.png");
+    game.load.image("clouds", path + "/clouds.png");
+    game.load.atlasJSONHash('hero', path + "/explorer.png", path + "/explorer.json");
 };
 
 mainState.doJump = function () {
@@ -28,6 +30,9 @@ mainState.delayOver = function () {
     if (this.hero) {
         this.hero.animations.play("die");
         this.hero.body.velocity.y = 100;
+        // fall down when dead
+        this.hero.body.collideWorldBounds = false;
+        this.blocks.children[0].body.velocity.x = -100;
     }
     game.time.events.add(Phaser.Timer.SECOND, this.gameOver, this);
 };

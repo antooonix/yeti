@@ -1,4 +1,5 @@
 endState.create = function() {
+    mainState.timer.stop();
     // Add a sprite to be used as a play again button.
     this.playAgain = game.add.sprite(game.width / 2, game.height / 2, "playAgain");
 
