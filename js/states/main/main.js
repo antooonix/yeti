@@ -5,6 +5,9 @@ let path = "assets/";
 
 mainState.preload = function () {
     game.load.image("ground", "images/ground.png");
+    game.load.image("block_1", path + "cracks/Crack1.png");
+    game.load.image("block_2", path + "cracks/Crack2.png");
+    game.load.image("block_3", path + "cracks/Crack3.png");
     game.load.image("back_mountains", path + "mountains/mountain_back.svg");
     game.load.image("front_mountains", path + "mountains/mountain_front.svg");
     game.load.image("block", "images/block.png");

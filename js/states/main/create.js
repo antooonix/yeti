@@ -12,6 +12,8 @@ mainState.create = function () {
     // Turn the background sky blue.
     game.stage.backgroundColor = "#41aeb5";
 
+    game.add.image(0 , game.height - 100, 'background').anchor.set(0.5);
+   // debugger;
     // Add the ground.
     this.ground = game.add.sprite(0, game.height * .9, "ground");
     var graphics = game.add.graphics();
