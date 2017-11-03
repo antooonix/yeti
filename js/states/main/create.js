@@ -1,4 +1,7 @@
 mainState.create = function () {
+    //Enable Arcade Physics
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
     this.clickLock = false;
     this.power = 40;
     this.timer = game.time.create(false);
@@ -23,13 +26,21 @@ mainState.create = function () {
     graphics.endFill();
 
     // Add mountains
-    this.back_mountains = game.add.sprite(0, 142, "back_mountains");
-    this.back_mountains.width = game.width;
-    this.back_mountains.scale.y = this.back_mountains.scale.x* 1.5;
+     this.back_mountains = this.game.add.tileSprite(
+        0,
+        115,
+        this.game.width,
+        this.game.cache.getImage('back_mountains').height - 20,
+        'back_mountains'
+    );
 
-    this.front_mountains = game.add.sprite(110, 210, "front_mountains");
-    this.front_mountains.width = game.width;
-    this.front_mountains.scale.y = this.front_mountains.scale.x;
+     this.front_mountains = this.game.add.tileSprite(
+        0,
+        156,
+        this.game.width,
+        this.game.cache.getImage('front_mountains').height - 30,
+        'front_mountains'
+    );
 
     // Add the hero in.
     this.hero = game.add.sprite(game.width * .2, this.ground.y, "hero");

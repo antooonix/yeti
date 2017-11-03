@@ -26,4 +26,7 @@ mainState.update = function () {
         this.hero.body.velocity.y = 200;
         this.delayOver();
     }
+
+    this.back_mountains.tilePosition.x -= 0.05;
+    this.front_mountains.tilePosition.x -= 0.3;   
 };
