@@ -54,7 +54,7 @@ mainState.create = function () {
     animations.hero.runAnimation = this.hero.animations.add("run", makeArray(0, 29), 40, true).play();
     
     // Hero characteristics
-    this.hero.width = game.width / 16;
+    this.hero.width = game.width / 12;
     this.hero.scale.y = this.hero.scale.x;
     this.hero.anchor.set(0.5, 1);
 

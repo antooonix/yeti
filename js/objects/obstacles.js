@@ -1,7 +1,6 @@
 let BLOCKS = ["block_1", "block_2", "block_3"];
 let blockCounter = 0;
 
-//===============
 function makeBlocks() {
     this.blocks.removeAll();
 
@@ -18,7 +17,7 @@ function makeBlocks() {
     this.blocks.x = game.width - this.blocks.width
     this.blocks.y = game.height - 150;
 
-    if (!(blockCounter % 3)) {
+    if (!(blockCounter % 2)) {
         game.time.slowMotion /= 1.1;
         game.time.desiredFps /= 1.1;
         
@@ -41,6 +40,6 @@ function makeBlocks() {
     function randomBlock() {
         let rndBlock = game.rnd.integerInRange(0, BLOCKS.length - 1);
 
-        return game.add.sprite(0, 0, BLOCKS[rndBlock]);
+        return game.add.sprite(100, 0, BLOCKS[rndBlock]);
     }
 };
